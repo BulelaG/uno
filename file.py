@@ -71,7 +71,7 @@ Return: Boolean
 """
 def canPlay(colour, value, playerHand):
      for card in playerHand:
-         if "Wild" in card:
+         if "Wild" in card:                              #conditions to play a card
               return True
          elif colour in card or value in card:
               return True
@@ -82,6 +82,7 @@ unoDeck = buildDeck()
 unoDeck = shuffleDeck(unoDeck)
 unoDeck = shuffleDeck(unoDeck)
 discards = []
+ 
 # print(unoDeck)
 
 
