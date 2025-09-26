@@ -121,44 +121,44 @@ while playing:
               playing = False
               winner = "Player {}".format(playersTurn + 1)
           else:
-              
-                #check for special cards 
-                splitCard = discards[-1].split(" ",1)
-                currentColour = splitCard[0]
-                if len(splitCard) == 1:
-                    cardVal == "Any"
-                else:
-                    cardVal = splitCard[1]
-                if currentColour == "Wild":
-                    for x in range(len(colours)):
-                            print("{}) {}".format(x+1,colours[x]))
-                    newColour = int(input("What colour would you like to choose?"))
-                    while newColour <1 or newColour > 4:
-                            newColour =int(input("Invalid option. What colour would you like to choose?"))
-                    currentColour = colours[newColour-1]   
-                if cardVal == "Reverse":
-                    playDirection = playDirection * -1
-                elif cardVal == "Skip":
-                    playersTurn  += playDirection
-                    if playersTurn == numPlayers:
-                        playersTurn == 0
-                    elif playersTurn < 0:
-                        playersTurn = numPlayers-1
-                elif cardVal == "Draw 2":
-                    playerDraw = playersTurn+playDirection
-                    if playerDraw == numPlayers:
-                        playerDraw = 0
-                    elif playerDraw < 0:
-                        playerDraw = numPlayers-1
-                    players[playerDraw].extend(drawCards(2))
-                elif cardVal == "Draw 4":
-                    playerDraw = playersTurn+playDirection
-                    if playerDraw == numPlayers:
-                        playerDraw = 0
-                    elif playerDraw < 0:
-                        playerDraw = numPlayers-1
-                    players[playerDraw].extend(drawCards(4))
-                print("")
+                
+                    #check for special cards 
+                    splitCard = discards[-1].split(" ",1)
+                    currentColour = splitCard[0]
+                    if len(splitCard) == 1:
+                        cardVal == "Any"
+                    else:
+                        cardVal = splitCard[1]
+                    if currentColour == "Wild":
+                        for x in range(len(colours)):
+                                print("{}) {}".format(x+1,colours[x]))
+                        newColour = int(input("What colour would you like to choose?"))
+                        while newColour <1 or newColour > 4:
+                                newColour =int(input("Invalid option. What colour would you like to choose?"))
+                        currentColour = colours[newColour-1]   
+                    if cardVal == "Reverse":
+                        playDirection = playDirection * -1
+                    elif cardVal == "Skip":
+                        playersTurn  += playDirection
+                        if playersTurn == numPlayers:
+                            playersTurn == 0
+                        elif playersTurn < 0:
+                            playersTurn = numPlayers-1
+                    elif cardVal == "Draw 2":
+                        playerDraw = playersTurn+playDirection
+                        if playerDraw == numPlayers:
+                            playerDraw = 0
+                        elif playerDraw < 0:
+                            playerDraw = numPlayers-1
+                        players[playerDraw].extend(drawCards(2))
+                    elif cardVal == "Draw 4":
+                        playerDraw = playersTurn+playDirection
+                        if playerDraw == numPlayers:
+                            playerDraw = 0
+                        elif playerDraw < 0:
+                            playerDraw = numPlayers-1
+                        players[playerDraw].extend(drawCards(4))
+                    print("")
      else:
             print("You can not play. You have to draw a card")
             players[playersTurn].extend(drawCards(1))
